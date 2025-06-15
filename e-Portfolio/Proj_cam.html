@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Outil de traitement de données – Mon e-Portfolio</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-ku1qVZRHRG5MV8q1tb3+jh/BfiCNocMK3Qf1Mx7/aklz9o4xzBuTJkLrgfxXhwJb0uouW+WQYbV1JRZC5C/gcw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Barre de navigation -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="A propos.html">À propos</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="projects.html">Projets</a></li>
+      <li><a href="Confidentialite.html">Mentions légales</a></li>
+    </ul>
+  </nav>
+
+  <!-- En-tête projet -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <img src="Images/PANO.jpg" alt="Fond CV" class="hero-image">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Outil de traitement de données</h1>
+        <a href="projects.html" class="btn">← Retour aux projets</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Section Fondement -->
+    <section id="foundation">
+      <h2>Fondement</h2>
+      <p>
+        L’objectif principal de ce projet était d’analyser et d’optimiser les performances d’un réseau Wi-Fi au sein du bâtiment C. 
+        Nous avons mené un ensemble d’actions techniques allant du câblage physique jusqu’à la modélisation du réseau via Cisco Packet Tracer.
+      </p>
+      <p>
+        Une attention particulière a été portée sur l’étude des bandes 2,4 GHz et 5 GHz, en analysant portée, performances et efficacité.
+      </p>
+    </section>
+
+    <!-- Section Technologies -->
+    <section id="technologies">
+      <h2>Technologies et matériel utilisés</h2>
+      <ul class="skills-list">
+        <li>Python</li>
+        <li>Pathlib</li>
+        <li>PyQt5 + PyQtChart</li>
+        <li>PowerShell</li>
+      </ul>
+    </section>
+
+    <!-- Section Rôles -->
+    <section id="roles">
+      <h2>Répartition des rôles</h2>
+      <p>Développement principal :</p>
+      <ul class="skills-list"><li>Matthieu D.</li></ul>
+    </br>
+      <p>Assistance à la modélisation réseau :</p>
+      <ul class="skills-list"><li>Akaza K.</li></ul>
+    </section>
+
+    <!-- Section Déroulement -->
+    <section id="workflow">
+      <h2>Déroulement du projet</h2>
+      <p>
+        Le projet a débuté par un script Python de scan de répertoire, développé par Arthur, pour filtrer les fichiers selon leur taille.
+      </p>
+      <p>
+        Ensuite, nous avons créé une interface graphique sous PyQt5 pour rendre l’outil interactif et visuel.
+      </p>
+      <p>
+        Enfin, deux scripts PowerShell automatisent le lancement et la suppression sécurisée des fichiers volumineux.
+      </p>
+    </section>
+
+    <!-- Section Captures d'écran -->
+    <section id="screenshots">
+      <h2>Captures d’écran</h2>
+      <div class="interest-list">
+        <div class="interest-item">
+          <img src="Images/Proj_cam2.png" alt="Logiciel après analyse">
+          <p>Logiciel après analyse</p>
+        </div>
+        <div class="interest-item">
+          <img src="Images/Proj_camls.png" alt="Liste des fichiers">
+          <p>Liste des fichiers détectés</p>
+        </div>
+        <div class="interest-item">
+          <img src="Images/Proj_camsup.png" alt="Menu de suppression">
+          <p>Menu de suppression</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Contraintes -->
+    <section id="constraints">
+      <h2>Contraintes et solutions</h2>
+      <p>
+        L’automatisation PowerShell a nécessité des ajustements d’autorisations, puis l’ajout d’un prompt de confirmation pour la sécurité.
+      </p>
+      <p>
+        La gestion multi-plateforme (Windows/Linux/Mac) a aussi demandé l’usage du format JSON pour le transport des métadonnées.
+      </p>
+    </section>
+
+    <!-- Section Résultats -->
+    <section id="results">
+      <h2>Résultats</h2>
+      <ul class="skills-list">
+        <li>Outil complet d’analyse de fichiers volumineux</li>
+        <li>GUI fonctionnelle avec graphiques dynamiques</li>
+        <li>Suppression sécurisée via PowerShell</li>
+      </ul>
+    </section>
+
+    <!-- Section Leçons -->
+    <section id="lessons">
+      <h2>Leçons tirées</h2>
+      <p>
+        J’ai renforcé mes compétences Python/PyQt et découvert l’importance de la modularité et de la sécurité en scripts PowerShell.
+      </p>
+      <p>
+        Ce projet m’a aussi sensibilisé à l’ergonomie et à la portabilité multi-OS.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <ul class="social">
+      <li><a href="https://github.com/Grenat-404" target="_blank">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/matthieu-dejoie-33211433b/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://www.instagram.com/mtt_2joy/" target="_blank">Instagram</a></li>
+    </ul>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="A propos.html">À propos</a>
+      <a href="Contact.html">Contact</a>
+      <a href="Confidentialite.html">Mentions légales</a>
+    </div>
+    <p>© 2025 – DEJOIE Matthieu</p>
+  </footer>
+
+</body>
+</html>

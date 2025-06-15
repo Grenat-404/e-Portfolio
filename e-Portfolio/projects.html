@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-ku1qVZRHRG5MV8q1tb3+jh/BfiCNocMK3Qf1Mx7/aklz9o4xzBuTJkLrgfxXhwJb0uouW+WQYbV1JRZC5C/gcw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  />
+  <script src="https://kit.fontawesome.com/c594fc60cc.js" crossorigin="anonymous"></script>
+  <title>Projets – Mon e-Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barre de navigation -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="A propos.html">À propos</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="projects.html" class="active">Projets</a></li>
+      <li><a href="Confidentialite.html">Mentions légales</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section Projets -->
+  <section id="projects" class="projects">
+    <h2>PROJETS</h2>
+
+    <!-- Barre de recherche -->
+    <div class="search-container">
+      <div class="search-item">
+        <i class="fa-solid fa-search"></i>
+        <input type="text" placeholder="Rechercher un titre" id="searchInput">
+      </div>
+      <div class="search-item">
+        <i class="fa-solid fa-calendar-days"></i>
+        <select id="yearFilter">
+          <option value="">Toutes les années</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+        </select>
+      </div>
+      <div class="search-item">
+        <i class="fa-solid fa-folder-open"></i>
+        <select id="categoryFilter">
+          <option value="">Toutes les catégories</option>
+          <option value="Programmation">Programmation</option>
+          <option value="Développement Web">Développement Web</option>
+          <option value="Multi">Multi</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
+      <div class="search-item">
+        <i class="fa-solid fa-code"></i>
+        <select id="compFilter">
+          <option value="">Toutes les compétences</option>
+          <option value="Administrer">Administrer</option>
+          <option value="Connecter">Connecter</option>
+          <option value="Programmer">Programmer</option>
+        </select>
+      </div>
+      <button id="resetButton" class="btn">Réinitialiser</button>
+    </div>
+
+    <p id="compExplanation" class="comp-explanation"></p>
+
+    <!-- Cartes de projets -->
+    <main>
+      <div class="card-container">
+        <a href="page3.html" class="card" data-annee="2025" data-categorie="Programmation" data-competences="Programmer">
+          <img src="Images/img.png" alt="Site web Django">
+          <h4>Site web Django</h4>
+          <p><span class="tag">Programmer</span> <span class="tag-year">2025</span></p>
+        </a>
+
+        <a href="Proj_CV.html" class="card" data-annee="2024" data-categorie="Développement Web" data-competences="Programmer">
+          <img src="Images/img.png" alt="Site web Curriculum Vitae">
+          <h4>Site web Curriculum Vitae</h4>
+          <p><span class="tag">Développement Web</span> <span class="tag-year">2024</span></p>
+        </a>
+
+        <a href="Proj_cam.html" class="card" data-annee="2025" data-categorie="Programmation" data-competences="Programmer">
+          <img src="Images/img.png" alt="Outil de traitement de données">
+          <h4>Outil de traitement de données</h4>
+          <p><span class="tag">Programmation</span> <span class="tag-year">2025</span></p>
+        </a>
+
+        <a href="Proj_baie.html" class="card" data-annee="2024" data-categorie="Multi" data-competences="Connecter">
+          <img src="Images/img.png" alt="Dispositif de transmission">
+          <h4>Dispositif de transmission</h4>
+          <p><span class="tag">Multi</span> <span class="tag-year">2024</span></p>
+        </a>
+
+        <a href="Proj_hyg.html" class="card" data-annee="2024" data-categorie="Autre" data-competences="Administrer">
+          <img src="Images/img.png" alt="Hygiène informatique">
+          <h4>Hygiène informatique</h4>
+          <p><span class="tag">Autre</span> <span class="tag-year">2024</span></p>
+        </a>
+      </div>
+    </main>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <ul class="social">
+      <li><a href="https://github.com/Grenat-404" target="_blank">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/matthieu-dejoie-33211433b/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://www.instagram.com/mtt_2joy/" target="_blank">Instagram</a></li>
+    </ul>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="Liens/A propos.html">À propos</a>
+      <a href="Liens/Contact.html">Contact</a>
+      <a href="Liens/Confidentialite.html">Mentions légales</a>
+    </div>
+    <p>© 2025 DEJOIE Matthieu</p>
+  </footer>
+
+  <!-- Script de filtrage -->
+  <script>
+    const searchInput    = document.getElementById("searchInput");
+    const yearFilter     = document.getElementById("yearFilter");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const compFilter     = document.getElementById("compFilter");
+    const resetButton    = document.getElementById("resetButton");
+    const cards          = document.querySelectorAll(".card");
+    const compExplanation= document.getElementById("compExplanation");
+
+    const explanations = {
+      "Administrer": "Administrer : configurer et maintenir serveurs, réseaux et bases de données pour garantir la disponibilité et la sécurité.",
+      "Connecter":    "Connecter : interconnecter systèmes ou appareils via protocoles réseau ou API pour un échange de données fluide.",
+      "Programmer":   "Programmer : écrire et optimiser du code pour créer des applications ou scripts répondant à un besoin fonctionnel."
+    };
+
+    function filterCards() {
+      const term = searchInput.value.toLowerCase();
+      const y    = yearFilter.value;
+      const c    = categoryFilter.value;
+      const p    = compFilter.value;
+
+      cards.forEach(card => {
+        const title = card.querySelector("h4").textContent.toLowerCase();
+        const a     = card.dataset.annee;
+        const cat   = card.dataset.categorie;
+        const comp  = card.dataset.competences;
+
+        const okText = title.includes(term);
+        const okYear = !y || a === y;
+        const okCat  = !c || cat === c;
+        const okComp = !p || comp.includes(p);
+
+        card.style.display = (okText && okYear && okCat && okComp) 
+                            ? "block" 
+                            : "none";
+      });
+    }
+
+    searchInput.addEventListener("input", filterCards);
+    yearFilter.addEventListener("change", filterCards);
+    categoryFilter.addEventListener("change", filterCards);
+
+    compFilter.addEventListener("change", () => {
+      const key = compFilter.value;
+      compExplanation.textContent = explanations[key] || "";
+      filterCards();
+    });
+
+    resetButton.addEventListener("click", () => {
+      searchInput.value     = "";
+      yearFilter.value      = "";
+      categoryFilter.value  = "";
+      compFilter.value      = "";
+
+      compExplanation.textContent = "";
+
+      filterCards();
+    });
+
+    document.addEventListener("DOMContentLoaded", filterCards);
+  </script>
+
+
+</body>
+</html>

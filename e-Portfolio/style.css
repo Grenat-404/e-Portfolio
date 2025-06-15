@@ -1,0 +1,573 @@
+/* style.css */
+
+@font-face {
+  font-family: 'Anurati';
+  src: url('fonts/Anurati-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Variables de thème */
+:root {
+  --primary: #2c3e50;
+  --light: #ecf0f1;
+  --accent: #3498db;
+  --btn-bg: #3498db;
+  --btn-color: #fff;
+  --font: 'IBM Plex Mono', monospace;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--primary);
+  line-height: 1.6;
+  background: var(--light);
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--primary);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.navbar a {
+  display: block;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  color: var(--light);
+  transition: background 0.3s, color 0.3s;
+}
+.navbar a:hover {
+  background: var(--accent);
+  color: var(--btn-color);
+}
+
+/* Section Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+  z-index: 1;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.5);
+  z-index: 2;
+}
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--light);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text h1 {
+  font-family: 'Anurati', sans-serif;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: darken(var(--btn-bg), 10%);
+}
+
+/* Style de la photo de profil */
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--light);
+}
+
+
+/* Sections générales */
+section {
+  padding: 4rem 2rem;
+}
+section h2 {
+  position: relative;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary);
+  font-family: 'Anurati', sans-serif;
+}
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* À propos */
+.about p {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Compétences */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+.skills-list li {
+  background: var(--light);
+  border: 1px solid var(--primary);
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Section Parcours */
+
+.education h2 {
+  position: relative;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary);
+}
+.education h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 100px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 60px;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-item .year {
+  width: 60px;
+  text-align: right;
+  padding-right: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.timeline-item .content {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex: 1;
+}
+
+.timeline-item .content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.timeline-item .content p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Carousel */
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform .2s, box-shadow .2s;
+  flex: 0 0 260px;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.carousel-slide:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-slide h3 {
+  margin: 0;
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--light);
+  font-weight: bold;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.carousel-slide p {
+  margin: 0;
+  padding: 1rem;
+  background: var(--light);
+  color: var(--primary);
+  flex: 1;
+  text-align: center;
+}
+
+
+.carousel-track-container {
+  overflow: hidden;
+  position: relative;
+}
+.carousel-track {
+  display: flex;
+  transition: transform var(--transition) ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+.carousel-slide {
+  min-width: calc(100% / 3);
+  box-sizing: border-box;
+  text-align: center;
+  padding: 1rem;
+  flex: 0 0 260px;
+  margin-right: 1rem;
+}
+.carousel-slide img {
+  width: 100%;
+  border-radius: 8px;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 2rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  z-index: 2;
+}
+.carousel-btn.prev {
+  left: 10px;
+}
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+/* Centres d’intérêt */
+
+.interest-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.interest-item {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.interest-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.interest-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.interest-item p {
+  margin: 0;
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--light);
+  font-weight: bold;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+
+/* Footer */
+.footer {
+  background: var(--primary);
+  color: var(--light);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.footer .social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.footer .social li {
+  margin: 0 0.5rem;
+}
+.footer .social a {
+  color: var(--light);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+.footer .social a:hover {
+  color: var(--accent);
+}
+.footer p {
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  color: var(--light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+/* About */
+.about h3 {
+  text-align: center;
+}
+
+/* Projets */
+/* Barre de recherche */
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.search-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-item i {
+  position: absolute;
+  left: 0.75rem;
+  color: var(--primary);
+  font-size: 1rem;
+}
+.search-item input,
+.search-item select {
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--primary);
+}
+#resetButton.btn {
+  padding: 0.6rem 1.2rem;
+  background: var(--primary);
+  color: var(--btn-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#resetButton.btn:hover {
+  background: var(--accent);
+  color: var(--light);
+}
+
+/* Cartes de projets */
+.card-container {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.card h4 {
+  margin: 0;
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--light);
+  font-family: var(--font);
+  text-align: center;
+}
+.card p {
+  margin: 0;
+  padding: 1rem;
+  background: var(--light);
+  color: var(--primary);
+  text-align: center;
+}
+
+.comp-explanation {
+  margin: 1rem auto;
+  max-width: 800px;
+  font-style: italic;
+  color: var(--primary);
+  text-align: center;
+}
+
+main section p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
