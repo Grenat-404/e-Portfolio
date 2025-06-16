@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SAE RT13 – Construction d’un réseau GNS3</title>
+  <title>Réseau complet GNS3 – Mon e-Portfolio</title>
   <script src="https://kit.fontawesome.com/c594fc60cc.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -23,112 +23,110 @@
   <!-- Section Hero -->
   <section class="hero" id="home">
     <div class="hero-overlay"></div>
-    <img src="Images/FR_232_bg_player_large.png" alt="Topologie GNS3" class="hero-image">
+    <img src="Images/DVm2iLzW4AICTAP.webp" alt="Topologie GNS3" class="hero-image">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>SAE RT13 – Construction d’un réseau GNS3</h1>
+        <h1>Réseau complet GNS3</h1>
         <a href="projects.html" class="btn">← Retour aux projets</a>
       </div>
     </div>
   </section>
 
   <main>
-    <!-- Introduction -->
-    <section id="introduction">
-      <h2>Introduction</h2>
+    <!-- Idée de départ -->
+    <section id="contexte">
+      <h2>Idée de départ</h2>
       <p>
-        Dans le cadre de la SAE RT13 (Semestre 2), l’objectif était de consolider la maîtrise des 
-        équipements réseau de niveau 2 (commutateur) et niveau 3 (routeur) via une simulation GNS3. 
-        Vous deviez construire un LAN multi-VLAN, assurer le routage inter-VLAN, mettre en place des 
-        services sur des serveurs et appliquer des règles de sécurité (port-security, ACL).
+        Le projet consiste à concevoir et sécuriser un réseau local complet en utilisant des commutateurs 
+        et routeurs, via le logiciel GNS3. Il inclut la création de VLANs, le routage inter-VLAN, 
+        l’équilibrage de charge, l’adressage IP personnalisé et l’interconnexion des équipements. Plusieurs 
+        services (FTP, Web avec synchronisation) sont déployés, et des règles de sécurité (port-security, ACL) 
+        sont mises en œuvre pour contrôler le trafic réseau. Enfin, le réseau est connecté au réseau externe simulé.
       </p>
     </section>
 
-    <!-- Topologie -->
-    <section id="topologie">
-      <h2>Topologie du réseau</h2>
-      <p>
-        La figure ci-dessous illustre la topologie à reproduire :
-      </p>
-      <img src="Images/Proj_gns3_topo.png" alt="Capture de la topologie GNS3" style="max-width:100%; margin:1rem 0;">
-      <p>
-        - Deux routeurs (R1, R2) et un routeur de bordure (R3) pour l’accès extérieur via le Cloud GNS3.  
-        - Deux commutateurs interconnectés pour le routage inter-VLAN (via commutateur-fed).  
-        - Un commutateur d’accès (`commutateur-1`) pour 3 VLANs d’utilisateurs et les serveurs.
-      </p>
-    </section>
-
-    <!-- Adressage IP et VLAN -->
-    <section id="adressage">
-      <h2>Adressage IP &amp; VLAN</h2>
-      <p>
-        Le réseau 192.168.128.0/20 est segmenté en 32 sous-réseaux avec masque variable, chacun 
-        subdivisé en :
-      </p>
+    <!-- Technologies et matériel -->
+    <section id="technologies">
+      <h2>Technologies et matériel utilisés</h2>
       <ul class="skills-list">
-        <li>VLAN 100 (administration) : 4 adresses</li>
-        <li>VLAN 200 (développeurs) : 4 adresses</li>
-        <li>VLAN 300 (administrateurs) : 4 adresses</li>
-        <li>VLAN productions : 4 adresses</li>
-        <li>Liens inter-équipements (/30)</li>
-      </ul>
-      <p>
-        Le VLAN natif est déplacé en 999 (taggé). Le routage inter-VLAN est assuré directement sur 
-        <em>commutateur-fed</em>, et un équilibre de charge STP répartit les VLANs sur trois liens.
-      </p>
-    </section>
-
-    <!-- Services déployés -->
-    <section id="services">
-      <h2>Services déployés</h2>
-      <ul class="skills-list">
-        <li>DHCP centralisé sur <strong>Serveur-dhcp</strong></li>
-        <li>FTP (anonymous + comptes Antoine/Élise) sur <strong>Serveur-sauvegarde</strong></li>
-        <li>Apache sur <strong>Serveur-dev</strong> et <strong>Serveur-production</strong> avec 
-            déploiement via <code>rsync</code></li>
+        <li>GNS3</li>
+        <li>Routeurs Cisco 3660</li>
+        <li>Commutateurs Cisco</li>
+        <li>PC virtuels sous Debian</li>
       </ul>
     </section>
 
-    <!-- Sécurité -->
-    <section id="securite">
-      <h2>Sécurité</h2>
+    <!-- Déroulement -->
+    <section id="deroulement">
+      <h2>Déroulement du projet</h2>
+      <p>
+        J’ai d’abord créé la maquette du réseau sur GNS3 en intégrant routeurs, commutateurs et postes. 
+        Puis j’ai configuré les VLANs : Administration (100), Développeurs (200), Administrateurs (300) 
+        et VLAN natif sécurisé (999), centralisés sur le commutateur principal.
+      </p>
+      <p>
+        Pour l’équilibrage et la redondance, j’ai mis en place STP en ajustant les priorités sur chaque lien. 
+        Le plan d’adressage IP a été défini puis appliqué aux équipements, et un serveur DHCP a été installé 
+        pour distribuer dynamiquement les adresses. Le service DHCP intégré au commutateur a ensuite été 
+        migré vers un serveur Linux, avec relais DHCP (IP helper-address) configuré sur le routeur.
+      </p>
+      <p>
+        Le routage inter-VLAN a été assuré par RIP v2 sur les routeurs, avec définition des routes nécessaires. 
+        Enfin, j’ai déployé :
+      </p>
       <ul class="skills-list">
-        <li><strong>Port-security</strong> : maximiser 1 MAC par port sur les deux commutateurs</li>
-        <li><strong>ACL R2</strong> : n’autoriser que HTTP, SSH (22) et rsync (873)</li>
-        <li><strong>ACL R3 (bordure)</strong> : n’autoriser que ICMP &amp; HTTP depuis l’extérieur</li>
+        <li>Un serveur FTP (anonymous + comptes dédiés) sur <strong>Serveur-sauvegarde</strong></li>
+        <li>Un serveur Web Apache sur <strong>Serveur-dev</strong> et <strong>Serveur-production</strong>, synchronisés via <code>rsync</code></li>
       </ul>
     </section>
 
-    <!-- Interconnexion extérieure -->
-    <section id="interco">
-      <h2>Interconnexion au réseau IUT</h2>
+    <!-- Schéma du réseau -->
+    <section id="schema">
+      <h2>Schéma du réseau</h2>
+      <p>Voici la capture de la topologie dans GNS3 :</p>
+      <img src="Images/Capture d’écran du 2025-06-04 09-13-59.png" alt="Capture de la topologie GNS3" style="max-width:100%; margin:1rem 0;">
+    </section>
+
+    <!-- Contraintes et solutions -->
+    <section id="contraintes">
+      <h2>Contraintes et solutions</h2>
       <p>
-        Le routeur R3 est connecté au composant <em>Cloud1</em> (réseau extérieur). La configuration 
-        de R3 permet à n’importe quelle machine interne d’accéder à internet via le Cloud GNS3.
+        <strong>1. Route par défaut manquante :</strong> L’accès Internet ne fonctionnait pas car j’avais oublié 
+        la route 0.0.0.0/0 sur le routeur de bordure (R3). J’ai ajouté 
+        <code>ip route 0.0.0.0 0.0.0.0 [next-hop]</code> et tout est rentré dans l’ordre.
+      </p>
+      <p>
+        <strong>2. ACL trop strictes :</strong> Mes premières ACL sur R2/R3 bloquaient HTTP, ICMP, etc., 
+        car elles étaient mal ordonnées et appliquées sur la mauvaise interface/sens. 
+        J’ai revu l’ordre des règles, positionné les ACL « in/out » correctement et autorisé les ports 
+        80 (HTTP), 22 (SSH), 873 (rsync) et ICMP.
       </p>
     </section>
 
-    <!-- Captures d’écran -->
-    <section id="screenshots">
-      <h2>Captures d’écran</h2>
-      <div class="interest-list">
-        <div class="interest-item">
-          <img src="Images/Capture d’écran du 2025-06-04 09-13-59.png" alt="Schéma configuration">
-          <p>Schéma de la configuration</p>
-        </div>
+    <!-- Résultats -->
+    <section id="resultats">
+      <h2>Résultats</h2>
+      <ul class="skills-list">
+        <li>Infrastructure réseau opérationnelle</li>
+        <li>Plan d’adressage IP et routage inter-VLAN fonctionnels</li>
+        <li>Service DHCP centralisé</li>
+        <li>Service FTP et Web opérationnels avec synchronisation</li>
+        <li>ACL et port-security appliqués et testés</li>
+      </ul>
     </section>
 
-    <!-- Leçons tirées -->
-    <section id="lecons">
-      <h2>Leçons tirées</h2>
+    <!-- Retour d'expérience -->
+    <section id="retour">
+      <h2>Retour d’expérience</h2>
       <p>
         Ce projet m’a permis de :
       </p>
       <ul class="skills-list">
-        <li>Mettre en œuvre VLANs, trunks et routage inter-VLAN dans GNS3</li>
-        <li>Configurer STP et équilibrage de charge sur plusieurs liens</li>
-        <li>Apprendre les commandes IOS pour DHCP, ACL et port-security</li>
-        <li>Déployer et automatiser des services réseau sous Debian dans un labo simulé</li>
+        <li>Approfondir la conception et la sécurisation d’un réseau VLAN/trunk</li>
+        <li>Mettre en œuvre DHCP, relais DHCP et protocoles de routage dynamique (RIP v2)</li>
+        <li>Configurer STP pour redondance et équilibrage de charge</li>
+        <li>Déployer et synchroniser des services réseau sous Linux (FTP, Apache, rsync)</li>
+        <li>Rédiger et déboguer des ACL pour un filtrage fin du trafic</li>
       </ul>
     </section>
   </main>
@@ -148,34 +146,5 @@
     </div>
     <p>© 2025 DEJOIE Matthieu</p>
   </footer>
-
-  <div id="lightbox" class="lightbox">
-  <span id="lightbox-close" class="lightbox-close">&times;</span>
-  <img id="lightbox-img" class="lightbox-img" src="" alt="Agrandissement">
-  </div>
-
-  <script>
-    const lightbox   = document.getElementById('lightbox');
-    const lbImg      = document.getElementById('lightbox-img');
-    const lbClose    = document.getElementById('lightbox-close');
-
-    document.querySelectorAll('.interest-item img').forEach(img => {
-      img.addEventListener('click', () => {
-        const fullSrc = img.dataset.full || img.src;
-        lbImg.src     = fullSrc;
-        lightbox.classList.add('lightbox-show');
-      });
-    });
-
-    lbClose.addEventListener('click', () => {
-      lightbox.classList.remove('lightbox-show');
-    });
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) {
-        lightbox.classList.remove('lightbox-show');
-      }
-    });
-  </script>
-
 </body>
 </html>
