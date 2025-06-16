@@ -124,8 +124,7 @@ body {
   transition: background-color 0.3s;
 }
 .btn:hover {
-
-  filter: brightness(0.9);
+  background-color: #2e86c1;
 }
 
 /* Style de la photo de profil */
