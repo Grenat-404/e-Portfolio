@@ -155,6 +155,34 @@
     </div>
     <p>© 2025 – DEJOIE Matthieu</p>
   </footer>
+  
+  <div id="lightbox" class="lightbox">
+  <span id="lightbox-close" class="lightbox-close">&times;</span>
+  <img id="lightbox-img" class="lightbox-img" src="" alt="Agrandissement">
+  </div>
+
+  <script>
+    const lightbox   = document.getElementById('lightbox');
+    const lbImg      = document.getElementById('lightbox-img');
+    const lbClose    = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.interest-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        const fullSrc = img.dataset.full || img.src;
+        lbImg.src     = fullSrc;
+        lightbox.classList.add('lightbox-show');
+      });
+    });
+
+    lbClose.addEventListener('click', () => {
+      lightbox.classList.remove('lightbox-show');
+    });
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('lightbox-show');
+      }
+    });
+  </script>
 
 </body>
 </html>
