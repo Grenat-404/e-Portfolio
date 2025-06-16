@@ -121,7 +121,7 @@ body {
   color: var(--btn-color);
   text-decoration: none;
   border-radius: 4px;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 .btn:hover {
   background: darken(var(--btn-bg), 10%);
