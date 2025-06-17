@@ -169,18 +169,145 @@ section h2::after {
 }
 
 /* Compétences */
-.skills-list {
+.skills {
+  padding: 4rem 2rem;
+  background: var(--light);
+}
+.skills .skills-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.skills-list li {
+.skills-card,
+.skills-card-2 {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 1 1 300px;
+  padding: 2rem;
+}
+.skills-card-2 {
+  display: flex;
+  flex-direction: column;
+}
+.skills-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.skills-card-img-content {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.skills-icon,
+.human-skills-icon {
+  color: var(--light);
+}
+.skills-card-content h3,
+.skills-card-title {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin: 0;
+  font-family: 'Anurati', sans-serif;
+}
+.skills-card-content p,
+.skills-card-subtitle {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.skills-group {
+  display: flex;
+  flex-direction: column;
+}
+.skills-category {
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+.skills-items-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.skills-item {
+  position: relative;
   background: var(--light);
   border: 1px solid var(--primary);
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
+  border-radius: 6px;
+  padding: 0.75rem;
+  flex: 1 1 100px;
+  text-align: center;
+  cursor: default;
+}
+.skills-item img {
+  max-width: 40px;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+.skills-item p {
+  font-size: 0.85rem;
+  color: var(--primary);
+}
+.skills-item .tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: var(--light);
+  padding: 0.5rem;
   border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  font-size: 0.75rem;
+  z-index: 10;
+}
+.skills-item:hover .tooltip {
+  opacity: 1;
+}
+
+/* Compétences Humaines */
+.skills-card-2 .human-skills-container {
+  flex: 1;
+}
+.skills-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+.skills-item-2 {
+  background: var(--light);
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: default;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.skills-item-2:hover {
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* Section Parcours */
