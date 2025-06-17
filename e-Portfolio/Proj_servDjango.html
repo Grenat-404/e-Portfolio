@@ -89,7 +89,7 @@
     <section id="development">
       <h2>Déroulement du projet</h2>
       <p>Nous avons entamé le projet par la modélisation du schéma de données, définissant les entités et leurs relations, puis configuré deux machines virtuelles pour simuler notre infrastructure : une VM dédiée à la base de données MariaDB et une autre pour l’application web sous Django, orchestrée via Nginx et Gunicorn.</p>
-      <p>Sur la VM base de données, nous avons créé les tables selon le schéma défini et pré-rempli un jeu de données initial comprenant une sélection d<a href="#">aéroports</a>, de pistes d’atterrissage, de compagnies, de types d’avion et d’avions, constituant ainsi la fondation des interfaces CRUD.</p>
+      <p>Sur la VM base de données, nous avons créé les tables selon le schéma défini et pré-rempli un jeu de données initial comprenant une sélection d'aéroports, de pistes d’atterrissage, de compagnies, de types d’avion et d’avions, constituant ainsi la fondation des interfaces CRUD.</p>
       <p>La phase suivante a été consacrée au développement des vues et formulaires Django pour chaque entité : création, lecture, mise à jour et suppression. Chaque formulaire intègre des contrôles métier, comme la vérification de la longueur de piste nécessaire pour les types d’avion et la validation des champs requis.</p>
       <p>Nous avons ensuite implémenté la logique de réservation des pistes : le système calcule la disponibilité en tenant compte d’un créneau de 10&nbsp;minutes autour de chaque vol. Si aucune piste n’est libre, l’outil propose automatiquement un horaire différé.</p>
       <p>Pour simplifier le chargement de nombreux vols, une fonctionnalité d’import en masse via fichier CSV a été développée. La page d’import inclut une description détaillée du format attendu et des exemples de données, avant de valider et intégrer les enregistrements sans interrompre le service.</p>
@@ -120,10 +120,6 @@
         <div class="interest-item">
           <img src="Images/servDjango_vols.png" alt="Vols servDjango">
           <p>Gestion des vols</p>
-        </div>
-        <div class="interest-item">
-          <img src="Images/django_chateau.png" alt="Chateau Django">
-          <p>Gestion des châteaux</p>
         </div>
       </div>
     </section>
