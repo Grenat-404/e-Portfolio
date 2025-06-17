@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/c594fc60cc.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
   <!-- Barre de navigation -->
@@ -42,7 +44,8 @@
   <section id="about" class="about">
     <h2>A &nbsp; PROPOS</h2>
     <p>
-      Bonjour! Je suis Matthieu Dejoie, étudiant en Réseaux & Télécommunications à l'IUT de Colmar. Je suis passionné par la programmation, la cybersécurité et l'informatique.
+      Bonjour! Je suis Matthieu Dejoie, étudiant en Réseaux & Télécommunications à l'IUT de Colmar. Je suis passionné
+      par la programmation, la cybersécurité et l'informatique.
       Je suis toujours prêt à relever de nouveaux défis et cherche sans cesse à apprendre de nouvelles technologies.
     </p>
     <div style="text-align: center; margin-top: 1.5rem;">
@@ -51,41 +54,41 @@
   </section>
 
   <!-- Section Compétences -->
-<section id="skills" class="skills">
-  <h2>COMPÉTENCES</h2>
-  <div class="skills-container">
-    <!-- Compétences techniques -->
-    <div class="technical-skills">
-      <h3>Compétences techniques</h3>
-      <ul class="skills-list">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Python</li>
-        <li>Cisco Packet Tracer</li>
-        <li>Wireshark</li>
-        <li>VirtualBox</li>
-        <li>VMware</li>
-        <li>Windows</li>
-        <li>Linux</li>
-        <li>macOS</li>
-      </ul>
+  <section id="skills" class="skills">
+    <h2>COMPÉTENCES</h2>
+    <div class="skills-container">
+      <!-- Compétences techniques -->
+      <div class="technical-skills">
+        <h3>Compétences techniques</h3>
+        <ul class="skills-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Python</li>
+          <li>Cisco Packet Tracer</li>
+          <li>Wireshark</li>
+          <li>VirtualBox</li>
+          <li>VMware</li>
+          <li>Windows</li>
+          <li>Linux</li>
+          <li>macOS</li>
+        </ul>
+      </div>
+      <!-- Compétences humaines -->
+      <div class="human-skills">
+        <h3>Compétences humaines</h3>
+        <ul class="skills-list">
+          <li>À l’écoute</li>
+          <li>Organisé</li>
+          <li>Esprit d’équipe</li>
+          <li>Sérieux</li>
+          <li>Créatif</li>
+          <li>Planification</li>
+          <li>Respect des délais</li>
+          <li>Discret</li>
+        </ul>
+      </div>
     </div>
-    <!-- Compétences humaines -->
-    <div class="human-skills">
-      <h3>Compétences humaines</h3>
-      <ul class="skills-list">
-        <li>À l’écoute</li>
-        <li>Organisé</li>
-        <li>Esprit d’équipe</li>
-        <li>Sérieux</li>
-        <li>Créatif</li>
-        <li>Planification</li>
-        <li>Respect des délais</li>
-        <li>Discret</li>
-      </ul>
-    </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- Section Parcours d'études -->
@@ -179,46 +182,47 @@
 
   <!-- Script carrousel & smooth scroll -->
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const trackContainer = document.querySelector('.carousel-track-container');
-    const track          = document.querySelector('.carousel-track');
-    const slides         = Array.from(track.children);
-    const prevBtn        = document.querySelector('.carousel-btn.prev');
-    const nextBtn        = document.querySelector('.carousel-btn.next');
+    document.addEventListener('DOMContentLoaded', () => {
+      const trackContainer = document.querySelector('.carousel-track-container');
+      const track = document.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
 
-    const slideStyle    = getComputedStyle(slides[0]);
-    const slideWidth    = slides[0].getBoundingClientRect().width 
-                          + parseFloat(slideStyle.marginRight);
+      const slideStyle = getComputedStyle(slides[0]);
+      const slideWidth = slides[0].getBoundingClientRect().width
+        + parseFloat(slideStyle.marginRight);
 
-    let index = 0;
+      let index = 0;
 
-    const update = () => {
-      track.style.transform = `translateX(-${slideWidth * index}px)`;
-      prevBtn.disabled = index === 0;
-      nextBtn.disabled = index === slides.length - Math.floor(trackContainer.clientWidth / slideWidth);
-    };
+      const update = () => {
+        track.style.transform = `translateX(-${slideWidth * index}px)`;
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === slides.length - Math.floor(trackContainer.clientWidth / slideWidth);
+      };
 
-    prevBtn.addEventListener('click', () => {
-      if (index > 0) {
-        index--;
-        update();
-      }
-    });
-    nextBtn.addEventListener('click', () => {
-      const maxIndex = slides.length - Math.floor(trackContainer.clientWidth / slideWidth);
-      if (index < maxIndex) {
-        index++;
-        update();
-      }
-    });
+      prevBtn.addEventListener('click', () => {
+        if (index > 0) {
+          index--;
+          update();
+        }
+      });
+      nextBtn.addEventListener('click', () => {
+        const maxIndex = slides.length - Math.floor(trackContainer.clientWidth / slideWidth);
+        if (index < maxIndex) {
+          index++;
+          update();
+        }
+      });
 
-    update();
-    window.addEventListener('resize', () => {
       update();
+      window.addEventListener('resize', () => {
+        update();
+      });
     });
-  });
-</script>
+  </script>
 
 
 </body>
+
 </html>

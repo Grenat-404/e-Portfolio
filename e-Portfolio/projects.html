@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  integrity="sha512-ku1qVZRHRG5MV8q1tb3+jh/BfiCNocMK3Qf1Mx7/aklz9o4xzBuTJkLrgfxXhwJb0uouW+WQYbV1JRZC5C/gcw=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-ku1qVZRHRG5MV8q1tb3+jh/BfiCNocMK3Qf1Mx7/aklz9o4xzBuTJkLrgfxXhwJb0uouW+WQYbV1JRZC5C/gcw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://kit.fontawesome.com/c594fc60cc.js" crossorigin="anonymous"></script>
   <title>Projets – Mon e-Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- Barre de navigation -->
@@ -74,24 +72,21 @@
     <!-- Cartes de projets -->
     <main>
       <div class="card-container">
-        <a href="Proj_servDjango.html" class="card" data-annee="2025" data-categorie="Programmation" data-competences="Programmer">
+        <a href="Proj_servDjango.html" class="card" data-annee="2025" data-categorie="Programmation"
+          data-competences="Programmer">
           <img src="Images/Proj_django.png" alt="Serveur web Django">
           <h4>Serveur web Django</h4>
           <p><span class="tag">Programmer</span> <span class="tag-year">2025</span></p>
         </a>
-        <a href="Proj_django.html" class="card" data-annee="2025" data-categorie="Programmation" data-competences="Programmer">
-          <img src="Images/Proj_django.png" alt="Site web Django">
-          <h4>Site web Django</h4>
-          <p><span class="tag">Programmer</span> <span class="tag-year">2025</span></p>
-        </a>
-
-        <a href="Proj_CV.html" class="card" data-annee="2024" data-categorie="Développement Web" data-competences="Programmer">
+        <a href="Proj_CV.html" class="card" data-annee="2024" data-categorie="Développement Web"
+          data-competences="Programmer">
           <img src="Images/index_CV_flou.png" alt="Site web Curriculum Vitae">
           <h4>Site web Curriculum Vitae</h4>
           <p><span class="tag">Développement Web</span> <span class="tag-year">2024</span></p>
         </a>
 
-        <a href="Proj_cam.html" class="card" data-annee="2025" data-categorie="Programmation" data-competences="Programmer">
+        <a href="Proj_cam.html" class="card" data-annee="2025" data-categorie="Programmation"
+          data-competences="Programmer">
           <img src="Images/Proj_cam.png" alt="Outil de traitement de données">
           <h4>Outil de traitement de données</h4>
           <p><span class="tag">Programmation</span> <span class="tag-year">2025</span></p>
@@ -135,40 +130,40 @@
 
   <!-- Script de filtrage -->
   <script>
-    const searchInput    = document.getElementById("searchInput");
-    const yearFilter     = document.getElementById("yearFilter");
+    const searchInput = document.getElementById("searchInput");
+    const yearFilter = document.getElementById("yearFilter");
     const categoryFilter = document.getElementById("categoryFilter");
-    const compFilter     = document.getElementById("compFilter");
-    const resetButton    = document.getElementById("resetButton");
-    const cards          = document.querySelectorAll(".card");
-    const compExplanation= document.getElementById("compExplanation");
+    const compFilter = document.getElementById("compFilter");
+    const resetButton = document.getElementById("resetButton");
+    const cards = document.querySelectorAll(".card");
+    const compExplanation = document.getElementById("compExplanation");
 
     const explanations = {
       "Administrer": "Administrer : administer les réseaux et l'internet.",
-      "Connecter":    "Connecter : connecter les entreprises et les usagers.",
-      "Programmer":   "Programmer : créer des outils et applications informatiques pour les réseaux et télécommunications."
+      "Connecter": "Connecter : connecter les entreprises et les usagers.",
+      "Programmer": "Programmer : créer des outils et applications informatiques pour les réseaux et télécommunications."
     };
 
     function filterCards() {
       const term = searchInput.value.toLowerCase();
-      const y    = yearFilter.value;
-      const c    = categoryFilter.value;
-      const p    = compFilter.value;
+      const y = yearFilter.value;
+      const c = categoryFilter.value;
+      const p = compFilter.value;
 
       cards.forEach(card => {
         const title = card.querySelector("h4").textContent.toLowerCase();
-        const a     = card.dataset.annee;
-        const cat   = card.dataset.categorie;
-        const comp  = card.dataset.competences;
+        const a = card.dataset.annee;
+        const cat = card.dataset.categorie;
+        const comp = card.dataset.competences;
 
         const okText = title.includes(term);
         const okYear = !y || a === y;
-        const okCat  = !c || cat === c;
+        const okCat = !c || cat === c;
         const okComp = !p || comp.includes(p);
 
-        card.style.display = (okText && okYear && okCat && okComp) 
-                            ? "block" 
-                            : "none";
+        card.style.display = (okText && okYear && okCat && okComp)
+          ? "block"
+          : "none";
       });
     }
 
@@ -183,10 +178,10 @@
     });
 
     resetButton.addEventListener("click", () => {
-      searchInput.value     = "";
-      yearFilter.value      = "";
-      categoryFilter.value  = "";
-      compFilter.value      = "";
+      searchInput.value = "";
+      yearFilter.value = "";
+      categoryFilter.value = "";
+      compFilter.value = "";
 
       compExplanation.textContent = "";
 
@@ -198,4 +193,5 @@
 
 
 </body>
+
 </html>

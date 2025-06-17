@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- Barre de navigation -->
   <nav class="navbar">
@@ -36,7 +38,8 @@
     <!-- Fondement -->
     <section id="foundation">
       <h2>Fondement</h2>
-      <p>L'objectif de ce projet est de concevoir un CV sous forme de site web, entièrement responsive et accessible.</p>
+      <p>L'objectif de ce projet est de concevoir un CV sous forme de site web, entièrement responsive et accessible.
+      </p>
     </section>
 
     <!-- Technologies -->
@@ -49,11 +52,22 @@
       </ul>
     </section>
 
+    <!-- Section Apprentissages critiques -->
+    <section id="learnings">
+      <h2>Apprentissages critiques</h2>
+      <ul class="skills-list">
+        <li>AC13.01 | Utiliser un système informatique et ses outils</li>
+        <li>AC13.04 | Connaître l’architecture et les technologies d’un site Web</li>
+      </ul>
+    </section>
+
     <!-- Déroulement -->
     <section id="workflow">
       <h2>Déroulement du projet</h2>
-      <p>Dès le début, structuration sémantique de la page, découpage en sections : présentation, expérience, formation, compétences et contact.</p>
-      <p>Mise en place d’un système d’ancres pour la navigation interne, et d’un CSS centralisé pour homogénéiser le style.</p>
+      <p>Dès le début, structuration sémantique de la page, découpage en sections : présentation, expérience, formation,
+        compétences et contact.</p>
+      <p>Mise en place d’un système d’ancres pour la navigation interne, et d’un CSS centralisé pour homogénéiser le
+        style.</p>
       <p>Tests multi-viewport pour garantir la cohérence sur mobile, tablette et desktop.</p>
     </section>
 
@@ -79,8 +93,10 @@
     <!-- Contraintes -->
     <section id="constraints">
       <h2>Contraintes et solutions</h2>
-      <p>Maintenir une mise en page claire tout en restant professionnel : j’ai opté pour une palette sobre et une typographie lisible.</p>
-      <p>Assurer la compatibilité sur anciens navigateurs (avec quelques ajustements CSS) et le respect des normes d’accessibilité.</p>
+      <p>Maintenir une mise en page claire tout en restant professionnel : j’ai opté pour une palette sobre et une
+        typographie lisible.</p>
+      <p>Assurer la compatibilité sur anciens navigateurs (avec quelques ajustements CSS) et le respect des normes
+        d’accessibilité.</p>
     </section>
 
     <!-- Résultats -->
@@ -118,19 +134,19 @@
   </footer>
 
   <div id="lightbox" class="lightbox">
-  <span id="lightbox-close" class="lightbox-close">&times;</span>
-  <img id="lightbox-img" class="lightbox-img" src="" alt="Agrandissement">
+    <span id="lightbox-close" class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Agrandissement">
   </div>
 
   <script>
-    const lightbox   = document.getElementById('lightbox');
-    const lbImg      = document.getElementById('lightbox-img');
-    const lbClose    = document.getElementById('lightbox-close');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const lbClose = document.getElementById('lightbox-close');
 
     document.querySelectorAll('.interest-item img').forEach(img => {
       img.addEventListener('click', () => {
         const fullSrc = img.dataset.full || img.src;
-        lbImg.src     = fullSrc;
+        lbImg.src = fullSrc;
         lightbox.classList.add('lightbox-show');
       });
     });
@@ -146,4 +162,5 @@
   </script>
 
 </body>
+
 </html>

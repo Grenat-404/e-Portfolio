@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- Barre de navigation -->
   <nav class="navbar">
@@ -37,10 +39,10 @@
     <section id="contexte">
       <h2>Idée de départ</h2>
       <p>
-        Le projet consiste à concevoir et sécuriser un réseau local complet en utilisant des commutateurs 
-        et routeurs, via le logiciel GNS3. Il inclut la création de VLANs, le routage inter-VLAN, 
-        l’équilibrage de charge, l’adressage IP personnalisé et l’interconnexion des équipements. Plusieurs 
-        services (FTP, Web avec synchronisation) sont déployés, et des règles de sécurité (port-security, ACL) 
+        Le projet consiste à concevoir et sécuriser un réseau local complet en utilisant des commutateurs
+        et routeurs, via le logiciel GNS3. Il inclut la création de VLANs, le routage inter-VLAN,
+        l’équilibrage de charge, l’adressage IP personnalisé et l’interconnexion des équipements. Plusieurs
+        services (FTP, Web avec synchronisation) sont déployés, et des règles de sécurité (port-security, ACL)
         sont mises en œuvre pour contrôler le trafic réseau. Enfin, le réseau est connecté au réseau externe simulé.
       </p>
     </section>
@@ -56,27 +58,43 @@
       </ul>
     </section>
 
+    <!-- Section Apprentissages critiques -->
+    <section id="learnings">
+      <h2>Apprentissages critiques</h2>
+      <ul class="skills-list">
+        <li>AC11.02 | Comprendre l’architecture et les fondements des systèmes numériques, les principes du codage de
+          l’information, des communications et de l’Internet</li>
+        <li>AC11.03 | Configurer les fonctions de base du réseau local</li>
+        <li>AC11.04 | Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation afin d’interagir
+          avec ceux-ci pour
+          la configuration et l’administration des réseaux et services fournis</li>
+        <li>AC11.05 | Identifier les dysfonctionnements du réseau local et savoir les signaler</li>
+        <li>AC11.06 | Installer un poste client, expliquer la procédure mise en place</li>
+      </ul>
+    </section>
+
     <!-- Déroulement -->
     <section id="deroulement">
       <h2>Déroulement du projet</h2>
       <p>
-        J’ai d’abord créé la maquette du réseau sur GNS3 en intégrant routeurs, commutateurs et postes. 
-        Puis j’ai configuré les VLANs : Administration (100), Développeurs (200), Administrateurs (300) 
+        J’ai d’abord créé la maquette du réseau sur GNS3 en intégrant routeurs, commutateurs et postes.
+        Puis j’ai configuré les VLANs : Administration (100), Développeurs (200), Administrateurs (300)
         et VLAN natif sécurisé (999), centralisés sur le commutateur principal.
       </p>
       <p>
-        Pour l’équilibrage et la redondance, j’ai mis en place STP en ajustant les priorités sur chaque lien. 
-        Le plan d’adressage IP a été défini puis appliqué aux équipements, et un serveur DHCP a été installé 
-        pour distribuer dynamiquement les adresses. Le service DHCP intégré au commutateur a ensuite été 
+        Pour l’équilibrage et la redondance, j’ai mis en place STP en ajustant les priorités sur chaque lien.
+        Le plan d’adressage IP a été défini puis appliqué aux équipements, et un serveur DHCP a été installé
+        pour distribuer dynamiquement les adresses. Le service DHCP intégré au commutateur a ensuite été
         migré vers un serveur Linux, avec relais DHCP (IP helper-address) configuré sur le routeur.
       </p>
       <p>
-        Le routage inter-VLAN a été assuré par RIP v2 sur les routeurs, avec définition des routes nécessaires. 
+        Le routage inter-VLAN a été assuré par RIP v2 sur les routeurs, avec définition des routes nécessaires.
         Enfin, j’ai déployé :
       </p>
       <ul class="skills-list">
         <li>Un serveur FTP (anonymous + comptes dédiés) sur <strong>Serveur-sauvegarde</strong></li>
-        <li>Un serveur Web Apache sur <strong>Serveur-dev</strong> et <strong>Serveur-production</strong>, synchronisés via <code>rsync</code></li>
+        <li>Un serveur Web Apache sur <strong>Serveur-dev</strong> et <strong>Serveur-production</strong>, synchronisés
+          via <code>rsync</code></li>
       </ul>
     </section>
 
@@ -84,21 +102,22 @@
     <section id="schema">
       <h2>Schéma du réseau</h2>
       <p>Voici la capture de la topologie dans GNS3 :</p>
-      <img src="Images/Capture d’écran du 2025-06-04 09-13-59.png" alt="Capture de la topologie GNS3" style="max-width:100%; margin:1rem 0;">
+      <img src="Images/Capture d’écran du 2025-06-04 09-13-59.png" alt="Capture de la topologie GNS3"
+        style="max-width:100%; margin:1rem 0;">
     </section>
 
     <!-- Contraintes et solutions -->
     <section id="contraintes">
       <h2>Contraintes et solutions</h2>
       <p>
-        <strong>1. Route par défaut manquante :</strong> L’accès Internet ne fonctionnait pas car j’avais oublié 
-        la route 0.0.0.0/0 sur le routeur de bordure (R3). J’ai ajouté 
+        <strong>1. Route par défaut manquante :</strong> L’accès Internet ne fonctionnait pas car j’avais oublié
+        la route 0.0.0.0/0 sur le routeur de bordure (R3). J’ai ajouté
         <code>ip route 0.0.0.0 0.0.0.0 [next-hop]</code> et tout est rentré dans l’ordre.
       </p>
       <p>
-        <strong>2. ACL trop strictes :</strong> Mes premières ACL sur R2/R3 bloquaient HTTP, ICMP, etc., 
-        car elles étaient mal ordonnées et appliquées sur la mauvaise interface/sens. 
-        J’ai revu l’ordre des règles, positionné les ACL « in/out » correctement et autorisé les ports 
+        <strong>2. ACL trop strictes :</strong> Mes premières ACL sur R2/R3 bloquaient HTTP, ICMP, etc.,
+        car elles étaient mal ordonnées et appliquées sur la mauvaise interface/sens.
+        J’ai revu l’ordre des règles, positionné les ACL « in/out » correctement et autorisé les ports
         80 (HTTP), 22 (SSH), 873 (rsync) et ICMP.
       </p>
     </section>
@@ -147,4 +166,5 @@
     <p>© 2025 DEJOIE Matthieu</p>
   </footer>
 </body>
+
 </html>
