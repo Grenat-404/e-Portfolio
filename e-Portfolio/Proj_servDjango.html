@@ -39,7 +39,9 @@
     <section id="foundation">
       <h2>Fondement</h2>
       <p>
-        Développement d’une interface de gestion du trafic aérien entre aéroports, permettant au gestionnaire de créer et administrer les entités suivantes : aéroports, pistes d’atterrissage, compagnies, types d’avion, avions et vols.
+        Développement d’une interface de gestion du trafic aérien entre aéroports, permettant au gestionnaire de créer
+        et administrer les entités suivantes : aéroports, pistes d’atterrissage, compagnies, types d’avion, avions et
+        vols.
       </p>
     </section>
 
@@ -88,12 +90,17 @@
     <!-- Déroulement du projet -->
     <section id="development">
       <h2>Déroulement du projet</h2>
-      <p>Nous avons entamé le projet par la modélisation du schéma de données, définissant les entités et leurs relations, puis configuré deux machines virtuelles pour simuler notre infrastructure : une VM dédiée à la base de données MariaDB et une autre pour l’application web sous Django, orchestrée via Nginx et Gunicorn.</p>
-      <p>Sur la VM base de données, nous avons créé les tables selon le schéma défini et pré-rempli un jeu de données initial comprenant une sélection d'aéroports, de pistes d’atterrissage, de compagnies, de types d’avion et d’avions, constituant ainsi la fondation des interfaces CRUD.</p>
-      <p>La phase suivante a été consacrée au développement des vues et formulaires Django pour chaque entité : création, lecture, mise à jour et suppression. Chaque formulaire intègre des contrôles métier, comme la vérification de la longueur de piste nécessaire pour les types d’avion et la validation des champs requis.</p>
-      <p>Nous avons ensuite implémenté la logique de réservation des pistes : le système calcule la disponibilité en tenant compte d’un créneau de 10&nbsp;minutes autour de chaque vol. Si aucune piste n’est libre, l’outil propose automatiquement un horaire différé.</p>
-      <p>Pour simplifier le chargement de nombreux vols, une fonctionnalité d’import en masse via fichier CSV a été développée. La page d’import inclut une description détaillée du format attendu et des exemples de données, avant de valider et intégrer les enregistrements sans interrompre le service.</p>
-      <p>Enfin, une interface de génération de fiches de vols a été mise en place. L’utilisateur peut sélectionner un aéroport et une période, et obtenir un rapport complet des vols au départ ou à l’arrivée. Des tests unitaires et fonctionnels ont été réalisés pour garantir la fiabilité avant la mise en production.</p>
+      <p>Après avoir conçu le schéma de données, nous avons déployé deux machines virtuelles (VM) : l’une pour MariaDB,
+        l’autre pour l’application Django sous Nginx/Gunicorn.
+        Sur la VM base de données, les tables ont été créées et peuplées d’un jeu initial (aéroports, pistes,
+        compagnies, types d’avion, avions) pour alimenter les interfaces CRUD.
+        Côté Django, nous avons développé les vues et formulaires CRUD avec validations métier (longueur de piste,
+        champs obligatoires).
+        La logique de réservation de pistes tient compte d’un créneau de 10 minutes par vol et propose automatiquement
+        un horaire différé si nécessaire.
+        Une fonction d’import en masse de vols via CSV a été ajoutée, avec guide de format et validation intégrée.
+        Enfin, une interface génère des fiches de vols filtrées par aéroport et période, et l’ensemble a été couvert par
+        des tests avant mise en production.</p>
     </section>
 
     <!-- Schéma de données -->
@@ -105,7 +112,8 @@
         <li><strong>Compagnies</strong> (id, nom, description, pays de rattachement)</li>
         <li><strong>Types d’avion</strong> (id, marque, modèle, description, images, longueur de piste nécessaire)</li>
         <li><strong>Avions</strong> (id, nom, compagnie, modèle)</li>
-        <li><strong>Vols</strong> (id, avion, pilote, aéroport de départ, date et heure de départ, aéroport d’arrivée, date et heure d’arrivée)</li>
+        <li><strong>Vols</strong> (id, avion, pilote, aéroport de départ, date et heure de départ, aéroport d’arrivée,
+          date et heure d’arrivée)</li>
       </ul>
     </section>
 
@@ -139,7 +147,8 @@
     <!-- Section Leçons -->
     <section id="lessons">
       <h2>Leçons tirées</h2>
-      <p>Projet visant à maîtriser la conception d’un modèle de données complexe, la mise en place de règles métier et le développement d’interfaces CRUD avec contrôle de disponibilité et import de données.</p>
+      <p>Projet visant à maîtriser la conception d’un modèle de données complexe, la mise en place de règles métier et
+        le développement d’interfaces CRUD avec contrôle de disponibilité et import de données.</p>
     </section>
   </main>
 
