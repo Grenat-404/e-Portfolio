@@ -194,6 +194,19 @@ section h2::after {
   min-width: 260px;
 }
 
+.technical-skills h3,
+.human-skills h3 {
+  text-align: center;
+}
+
+.technical-skills,
+.human-skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 /* Section Parcours */
 
 .education h2 {
