@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gestion des Châteaux dans les Régions – Mon e-Portfolio</title>
+  <title>Solution de gestion de serveurs informatiques – Mon e-Portfolio</title>
   <script src="https://kit.fontawesome.com/c594fc60cc.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -14,33 +14,19 @@
     <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="A propos.html">À propos</a></li>
-      <li><a href="Contact.html">Contact</a></li>
-      <li><a href="projects.html" class="active">Projets</a></li>
-      <li><a href="Confidentialite.html">Mentions légales</a></li>
+      <li><a href="projects.html">Projets</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-
-  <!-- Section Hero -->
-  <section class="hero" id="home">
-    <div class="hero-overlay"></div>
-    <img src="Images/Proj_django.png" alt="Logo Django" class="hero-image">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>Gestion des Châteaux dans les Régions</h1>
-        <a href="projects.html" class="btn">← Retour aux projets</a>
-      </div>
-    </div>
-  </section>
-
   <main>
     <!-- Section Fondement -->
     <section id="foundation">
       <h2>Fondement</h2>
       <p>
-        Ce projet consiste à développer une application web de gestion de châteaux et de régions
-        en utilisant le framework Django. L'objectif est de permettre la création, la lecture,
-        la mise à jour et la suppression (CRUD) de régions et de châteaux à travers une interface 
-        simple et intuitive.
+        Mettre en place une solution informatique pour l’entreprise. Ce projet, réalisé par Cameron FLORENCE en 2025,
+        consiste à créer une interface de gestion de serveurs informatiques et des services déployés dessus. L’application
+        s’adresse aux gestionnaires système et permet un pilotage centralisé des serveurs, services et applications liés
+        à l’infrastructure informatique de l’entreprise.
       </p>
     </section>
 
@@ -48,116 +34,122 @@
     <section id="technologies">
       <h2>Technologies et matériel utilisés</h2>
       <ul class="skills-list">
-        <li>Django</li>
-        <li>Python</li>
-        <li>HTML &amp; CSS</li>
+        <li>HTML</li>
+        <li>CSS</li>
         <li>JavaScript</li>
+        <li>Django</li>
+        <li>MariaDB</li>
+        <li>Nginx</li>
+        <li>Gunicorn</li>
       </ul>
     </section>
 
     <!-- Section Rôles -->
     <section id="roles">
       <h2>Répartition des rôles</h2>
-      <p>Développement principal :</p>
+      <p>Groupe :</p>
       <ul class="skills-list">
-        <li>Matthieu D.</li>
+        <li>Quentin</li>
+        <li>Cameron</li>
+        <li>Chloé</li>
       </ul>
+      <p>Objectifs : création de l’interface web et de son déploiement</p>
     </section>
 
     <!-- Section Déroulement -->
-    <section id="workflow">
+    <section id="development">
       <h2>Déroulement du projet</h2>
-      <p>
-        Le projet a débuté par l'initialisation d'un nouveau projet Django et la configuration
-        de l'environnement virtuel. J'ai ensuite défini les modèles Région et Château dans le 
-        fichier models.py, avant de créer les vues et les formulaires correspondants dans 
-        views.py et forms.py. Les templates HTML ont été mis en place pour la page d'accueil, 
-        la liste des régions, la liste des châteaux et les pages de détails. Enfin, j'ai testé 
-        l'application en local et configuré l'interface d'administration Django pour la gestion 
-        rapide des données.
-      </p>
+      <p>Au début du projet, nous avons commencé par concevoir un schéma de base de données clair et structuré, modélisant précisément les entités clés telles que les serveurs, services, applications, utilisateurs et leurs relations. Nous avons ensuite créé les tables dans la base de données pour poser les bases techniques nécessaires.</p>
+      <p>Cette structure a permis de mettre en place les opérations CRUD (Create, Read, Update, Delete) pour chaque type de donnée, avec des formulaires dynamiques incluant des vérifications de contraintes (espace mémoire disponible, nombre de processeurs) avant le déploiement d’un service.</p>
+      <p>Une fois la partie fonctionnelle en place, je me suis concentré sur la conception du tableau de bord, en proposant une interface claire, moderne et intuitive facilitant la gestion des serveurs et la visualisation de l’état des services déployés.</p>
+      <p>Nous avons également intégré une fonctionnalité d’import d’applications et de services via un fichier structuré pour simplifier le déploiement groupé. Enfin, pour simuler un environnement de production, nous avons mis en place deux machines virtuelles : l’une dédiée à l’hébergement de la base de données MariaDB, l’autre à l’application Django.</p>
     </section>
 
-    <!-- Captures d’écran -->
-    <section id="screenshots">
-      <h2>Captures d’écran</h2>
-      <div class="interest-list">
-        <div class="interest-item">
-          <img src="Images/servDjango_accueil.png" alt="Index servDjango">
-          <p>Page principale</p>
-        </div>
-        <div class="interest-item">
-          <img src="Images/servDjango_vols.png" alt="Vols Django">
-          <p>Gestion des vols</p>
-        </div>
-        </div>
-      </div>
+    <!-- Section Liens -->
+    <section id="links">
+      <h2>Liens</h2>
+      <p>Site web : <span>Image CV version PC (à insérer)</span></p>
+      <p>GitHub : <a href="https://github.com/Cam-12/SAE23" target="_blank" rel="noopener">https://github.com/Cam-12/SAE23</a></p>
+    </section>
+
+    <!-- Section Contraintes -->
+    <section id="constraints">
+      <h2>Contraintes et solutions</h2>
+      <p>Lors du déploiement de l’application Django, nous avons rencontré un problème d’affichage du CSS car Nginx ne servait pas correctement les fichiers statiques. Nous avons identifié un manque de droits sur le dossier des statiques et ajusté les permissions pour résoudre le problème.</p>
     </section>
 
     <!-- Section Résultats -->
     <section id="results">
       <h2>Résultats</h2>
       <ul class="skills-list">
-        <li>Application web CRUD complète pour les modèles Région et Château</li>
-        <li>Interface responsive et navigation fluide</li>
-        <li>Relations one-to-many entre régions et châteaux implémentées</li>
-        <li>Interface d'administration Django opérationnelle</li>
+        <li>Mise en place d’une base de données fonctionnelle avec toutes les entités (serveurs, services, utilisateurs, applications, types de serveurs, etc.)</li>
+        <li>Fonctionnalité d’import de services et d’applications via un fichier structuré</li>
+        <li>Génération d’une fiche récapitulative des services lancés sur un serveur</li>
+        <li>Déploiement sur deux machines virtuelles : Django et MariaDB</li>
       </ul>
     </section>
 
     <!-- Section Leçons -->
     <section id="lessons">
       <h2>Leçons tirées</h2>
-      <p>
-        J'ai approfondi ma maîtrise du framework Django, notamment son ORM, son système de templates 
-        et ses vues génériques. J'ai également consolidé mes compétences en structuration de projet, 
-        en gestion d'environnement virtuel et en bonnes pratiques de déploiement.
-      </p>
+      <p>Ce projet m’a permis de consolider mes compétences en développement web avec Django, gestion de base de données relationnelle et déploiement sur environnements virtualisés. J’ai configuré Nginx et résolu des problèmes de permissions, et j’ai approfondi la conception de bases de données et les opérations CRUD.</p>
+    </section>
+
+    <!-- Section Compétence ciblée -->
+    <section id="competences">
+      <h2>Compétence ciblée</h2>
+      <p>Créer des outils et applications informatiques pour les R&amp;T</p>
+    </section>
+
+    <!-- Section Objectifs et problématique -->
+    <section id="objective">
+      <h2>Objectifs et problématique professionnelle</h2>
+      <p>Le professionnel R&amp;T doit développer des solutions informatiques complètes (centralisation des données d’administration, …) répondant à un cahier des charges. Ces applications incluent la gestion de données structurées, les traitements et une interface conviviale.</p>
+    </section>
+
+    <!-- Section Descriptif générique -->
+    <section id="description">
+      <h2>Descriptif générique</h2>
+      <p>Le professionnel R&amp;T peut développer des applications Web manipulables via un navigateur, destinées aux collaborateurs ou aux clients dans le cadre d’appels d’offres.</p>
+    </section>
+
+    <!-- Section Mots-clés -->
+    <section id="keywords">
+      <h2>Mots-clés</h2>
+      <ul class="skills-list">
+        <li>Algorithmique</li>
+        <li>Programmation</li>
+        <li>Développement Web</li>
+        <li>Documentation technique</li>
+      </ul>
+    </section>
+
+    <!-- Section Apprentissages critiques -->
+    <section id="learnings">
+      <h2>Apprentissages critiques</h2>
+      <ul class="skills-list">
+        <li>AC13.01 | Utiliser un système informatique et ses outils</li>
+        <li>AC13.02 | Lire, exécuter, corriger et modifier un programme</li>
+        <li>AC13.03 | Traduire un algorithme, dans un langage et pour un environnement donné</li>
+        <li>AC13.04 | Connaître l’architecture et les technologies d’un site Web</li>
+        <li>AC13.05 | Choisir les mécanismes de gestion de données adaptés au développement de l’outil et argumenter ses choix</li>
+        <li>AC13.06 | S’intégrer dans un environnement propice au développement et au travail collaboratif</li>
+      </ul>
+    </section>
+
+    <!-- Section Ressources mobilisées -->
+    <section id="resources">
+      <h2>Ressources mobilisées et combinées</h2>
+      <ul class="skills-list">
+        <li>R2.07 | Sources de données</li>
+        <li>R2.08 | Analyse et traitement de données structurées</li>
+        <li>R2.09 | Initiation au développement Web</li>
+        <li>R2.10 | Anglais technique 2</li>
+        <li>R2.11 | Expression-Culture-Communication Professionnelles</li>
+        <li>R2.12 | Projet Personnel et Professionnel</li>
+        <li>R2.13 | Mathématiques des systèmes numériques</li>
+      </ul>
     </section>
   </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <ul class="social">
-      <li><a href="https://github.com/Grenat-404" target="_blank">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/matthieu-dejoie-33211433b/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://www.instagram.com/mtt_2joy/" target="_blank">Instagram</a></li>
-    </ul>
-    <div class="footer-links">
-      <a href="index.html">Accueil</a>
-      <a href="A propos.html">À propos</a>
-      <a href="Contact.html">Contact</a>
-      <a href="Confidentialite.html">Mentions légales</a>
-    </div>
-    <p>© 2025 DEJOIE Matthieu</p>
-  </footer>
-  
-  <div id="lightbox" class="lightbox">
-  <span id="lightbox-close" class="lightbox-close">&times;</span>
-  <img id="lightbox-img" class="lightbox-img" src="" alt="Agrandissement">
-  </div>
-
-  <script>
-    const lightbox   = document.getElementById('lightbox');
-    const lbImg      = document.getElementById('lightbox-img');
-    const lbClose    = document.getElementById('lightbox-close');
-
-    document.querySelectorAll('.interest-item img').forEach(img => {
-      img.addEventListener('click', () => {
-        const fullSrc = img.dataset.full || img.src;
-        lbImg.src     = fullSrc;
-        lightbox.classList.add('lightbox-show');
-      });
-    });
-
-    lbClose.addEventListener('click', () => {
-      lightbox.classList.remove('lightbox-show');
-    });
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) {
-        lightbox.classList.remove('lightbox-show');
-      }
-    });
-  </script>
 </body>
 </html>
