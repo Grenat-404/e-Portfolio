@@ -225,6 +225,7 @@ section h2::after {
   margin: 0;
 }
 
+/* Techniques grid */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -265,6 +266,7 @@ section h2::after {
   font-size: 0.85rem;
   color: var(--primary);
 }
+/* Tooltip on hover */
 .skills-item .tooltip {
   position: absolute;
   bottom: 110%;
@@ -285,10 +287,7 @@ section h2::after {
   opacity: 1;
 }
 
-/* Compétences Humaines */
-.skills-card-2 .human-skills-container {
-  flex: 1;
-}
+/* Compétences humaines */
 .skills-grid-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -730,3 +729,9 @@ main section p {
   }
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .skills .skills-container {
+    flex-direction: column;
+  }
+}
