@@ -583,6 +583,21 @@ main section p {
   margin: 0 auto 1.5rem;
 }
 
+#screenshots {
+  text-align: center;
+}
+
+#screenshots .interest-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#screenshots .btn {
+  display: inline-block;
+  margin: 1.5rem auto 0;
+}
+
 /* LIGHTBOX */
 
 .lightbox {
