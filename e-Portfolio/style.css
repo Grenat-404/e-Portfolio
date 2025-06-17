@@ -183,6 +183,17 @@ section h2::after {
   border-radius: 4px;
 }
 
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.technical-skills, .human-skills {
+  flex: 1;
+  min-width: 260px;
+}
+
 /* Section Parcours */
 
 .education h2 {
